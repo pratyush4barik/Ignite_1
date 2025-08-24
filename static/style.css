@@ -1,9 +1,9 @@
 /* Root Variables */
 :root {
-    --primary-orange: #d2691e;
+    --primary-orange: #1ed2c6;
     --secondary-green: #228b22;
     --accent-cream: #f5f5dc;
-    --warm-orange: #ff8c42;
+    --warm-orange: #42ffe6;
     --sage-green: #9caf88;
     --text-dark: #2c3e50;
     --text-light: #6c757d;
@@ -31,11 +31,11 @@ body {
 /* Sidebar Form Styles */
 .sidebar-form {
     background: linear-gradient(135deg, var(--primary-orange) 0%, var(--warm-orange) 100%);
-    min-height: 100vh;
+    min-height: 100%;
     padding: 0;
     position: relative;
-    overflow-y: auto;
 }
+
 
 .sidebar-form::before {
     content: '';
@@ -51,8 +51,8 @@ body {
 .form-container {
     padding: 2rem;
     position: relative;
-    z-index: 1;
-    height: 100vh;
+    z-index: 2;
+    height: 140vh;
     overflow-y: auto;
 }
 
@@ -192,7 +192,9 @@ body {
     font-size: 4rem;
     color: var(--primary-orange);
     margin-bottom: 1rem;
+    margin-top: 13rem;
 }
+
 
 .welcome-card h2 {
     color: var(--text-dark);

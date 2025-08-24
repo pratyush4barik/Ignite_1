@@ -116,7 +116,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(78, 205, 196, 0.8) 0%, rgba(68, 160, 141, 0.7) 100%);
+ 
     z-index: 0;
 }
 
@@ -192,8 +192,8 @@ body {
 }
 
 .cta-button.secondary {
-    background: #4ecdc4;
-    color: white;
+    background: white;
+    color: #4ecdc4;
 }
 
 .cta-button.secondary:hover {
