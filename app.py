@@ -62,11 +62,54 @@ def calculate_calorie_needs(age, sex, weight, height, activity_level):
         return 2000, 60  # Default values
 
 @app.route('/')
-def index():
-    """Render the input form page"""
+def main_index():
+    """Render the main healthcare website homepage"""
+    return render_template('main_index.html')
+
+@app.route('/meal-planner')
+def meal_planner():
+    """Render the meal planner page"""
     foods_df = load_foods_data()
     food_list = foods_df['Food'].tolist() if not foods_df.empty else []
-    return render_template('index.html', food_list=food_list)
+    return render_template('meal_planner.html', food_list=food_list)
+
+@app.route('/chatbot')
+def chatbot():
+    """Render the AI health assistant chatbot page"""
+    return render_template('bot.html')
+
+@app.route('/signin')
+def signin():
+    """Render the signin page"""
+    return render_template('signin.html')
+
+@app.route('/signup')
+def signup():
+    """Render the signup page"""
+    return render_template('signup.html')
+
+@app.route('/forgot-password')
+def forgot_password():
+    """Render the forgot password page"""
+    return render_template('forgot-password.html')
+
+@app.route('/chat', methods=['POST'])
+def chat():
+    """Simple chat endpoint for health assistant"""
+    data = request.get_json()
+    user_message = data.get("message", "").strip()
+    
+    if not user_message:
+        return {"response": "Please enter your message."}
+    
+    # Simple echo response for demo - in production you'd integrate with AI service
+    response_message = f"Thank you for your message: '{user_message}'. This is a demo response. For a complete AI health assistant, please integrate with your preferred AI service (OpenAI, Gemini, etc.)."
+    
+    return {
+        "response": response_message,
+        "session_id": data.get("session_id", "demo"),
+        "type": "info"
+    }
 
 @app.route('/generate_plan', methods=['POST'])
 def generate_plan():

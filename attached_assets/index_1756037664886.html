@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://public-frontend-cos.metadl.com/mgx/img/favicon.png" type="image/png">
+    <title>ORTHOC - Healthcare Services</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+ 
+
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>MEDIORA</h2>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item"><a href="#home" class="nav-link">HOME</a></li>
+                <li class="nav-item"><a href="#about" class="nav-link">ABOUT</a></li>
+                <li class="nav-item"><a href="#departments" class="nav-link">WELLNESS WINGS</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link">CONTACT US</a></li>
+                <li class="nav-item"><a href="{{ url_for('signin') }}" class="nav-link signin-btn">SIGN IN</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>YOUR DIGITAL DOORWAY<br>TO HEALTHCARE</h1>
+                <p>Our AI medical chatbot makes healthcare simple—helping you understand symptoms, get clear guidance, and find the right care when you need it.</p>
+                
+                <!-- AI Button -->
+                <button type="button" class="cta-button" id="ai-assessment-btn">
+                    AI Health Assessment
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Departments Section -->
+ <section class="departments" id="departments">
+  <div class="container">
+    <h2>Wellness Wings</h2>
+    <p>Explore the different medical departments and understand where to find the right care.</p>
+
+    <div class="departments-grid" id="departmentsGrid">
+      <!-- Visible cards -->
+      <div class="department-card">
+        <div class="card-icon"><i class="fas fa-allergies"></i></div>
+        <h3>Dermatology</h3>
+        <p>Focuses on skin, hair, and nail care; treats conditions affecting the skin and related areas.</p>
+      </div>
+      <div class="department-card">
+        <div class="card-icon"><i class="fas fa-female"></i></div>
+        <h3>Obstetrics & Gynaecology</h3>
+        <p>Women’s reproductive health, pregnancy, childbirth, and post-delivery care.</p>
+      </div>
+      <div class="department-card">
+        <div class="card-icon"><i class="fas fa-baby"></i></div>
+        <h3>Paediatrics</h3>
+        <p>Health and medical care for children, infants, and young adults.</p>
+      </div>
+      <div class="department-card">
+        <div class="card-icon"><i class="fas fa-brain"></i></div>
+        <h3>Psychiatry</h3>
+        <p>Detects and treats emotional, behavioral, and mental health disorders.</p>
+      </div>
+
+      <!-- Hidden cards initially -->
+      <div class="department-card hidden">
+        <div class="card-icon"><i class="fas fa-dna"></i></div>
+        <h3>Neurology</h3>
+        <p>Diagnoses and treats nervous system disorders affecting the brain, nerves, and muscles.</p>
+      </div>
+      <div class="department-card hidden">
+        <div class="card-icon"><i class="fas fa-balance-scale"></i></div>
+        <h3>Endocrinology</h3>
+        <p>Manages hormone-related conditions and metabolic disorders.</p>
+      </div>
+      <div class="department-card hidden">
+        <div class="card-icon"><i class="fas fa-heartbeat"></i></div>
+        <h3>Cardiology</h3>
+        <p>Treats heart diseases and related cardiovascular conditions.</p>
+      </div>
+      <div class="department-card hidden">
+        <div class="card-icon"><i class="fas fa-stomach"></i></div>
+        <h3>Gastroenterology</h3>
+        <p>Focuses on digestive tract and gastrointestinal disorders.</p>
+      </div>
+      <div class="department-card hidden">
+        <div class="card-icon"><i class="fas fa-virus"></i></div>
+        <h3>COVID Consult</h3>
+        <p>Handles symptoms and care related to COVID-19 and respiratory infections.</p>
+      </div>
+      <div class="department-card hidden">
+        <div class="card-icon"><i class="fas fa-bone"></i></div>
+        <h3>Orthopaedics</h3>
+        <p>Treats bone and musculoskeletal injuries and conditions.</p>
+      </div>
+    </div>
+
+    <button class="view-all-btn" id="viewAllBtn">View All</button>
+  </div>
+</section>
+
+
+
+    <!-- ------------------- About Us Section ------------------- -->
+<section class="about" id="about">
+  <div class="container about-content">
+    <!-- Spline 3D Viewer on the left -->
+    <div class="about-spline">
+<script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.51/build/spline-viewer.js"></script>
+<spline-viewer url="https://prod.spline.design/691soDMeHBslZUwe/scene.splinecode"></spline-viewer>
+</div>
+
+
+    <!-- Text content on the right -->
+    <div class="about-text">
+      <h2 class="section-title">About Us</h2>
+      <p>We are a team dedicated to creating intuitive and innovative web solutions. Our focus is on delivering a seamless user experience while leveraging the latest technologies to bring ideas to life.</p>
+      <p>From responsive design to AI-powered features, we aim to craft digital experiences that are visually stunning and functionally robust. Our mission is to transform concepts into interactive, user-friendly realities.</p>
+    </div>
+  </div>
+</section>
+
+
+    <!-- Chatbot Modal -->
+
+<!-- Contact Section -->
+<section class="contact-section" id="contact">
+  <div class="container">
+    <h2>Or connect with us on...</h2>
+    <div class="contact-divider"></div>
+
+    <div class="social-icons">
+      <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i><span>Twitter</span></a>
+      <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i><span>LinkedIn</span></a>
+      <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i><span>Facebook</span></a>
+      <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i><span>YouTube</span></a>
+      <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i><span>Instagram</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container footer-content">
+    <div class="footer-left">
+      <h3>MEDIORA</h3>
+      <p>&copy; 2025, Mediora Healthcare Pvt. Ltd.</p>
+    </div>
+
+    <div class="footer-center">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#departments">Departments</a>
+      <a href="#contact us">Contact</a>
+    </div>
+
+    <div class="footer-right">
+      <button class="contact-button">Contact us</button>
+      <div class="footer-social">
+        <i class="fab fa-twitter"></i>
+        <i class="fab fa-facebook-f"></i>
+        <i class="fab fa-youtube"></i>
+        <i class="fab fa-linkedin-in"></i>
+        <i class="fab fa-instagram"></i>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+    <!-- JS -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
