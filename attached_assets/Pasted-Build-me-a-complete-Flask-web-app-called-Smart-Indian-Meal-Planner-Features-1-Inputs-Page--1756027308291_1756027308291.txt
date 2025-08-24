@@ -1,0 +1,76 @@
+Build me a complete Flask web app called “Smart Indian Meal Planner”.
+
+## Features:
+
+1. Inputs Page (index.html with a clean form UI):
+   - Age, Sex, Weight, Height, Activity level
+   - Budget per day (₹)
+   - Dietary preference (Veg / Non-Veg / Eggetarian)
+   - Pantry items (multi-select from available foods)
+
+2. Backend (Flask + Python + PuLP):
+   - Use Linear Programming to generate a daily meal plan from a CSV dataset of Indian foods.
+   - CSV should include per-100g values: food name, kcal, protein, fat, carbs, fiber, iron, cost (₹).
+   - Optimize to:
+     - Meet calorie & protein needs (based on age/sex/weight/activity).
+     - Stay within budget.
+     - Respect veg / non-veg restrictions.
+     - Prefer pantry items if selected.
+   - Output: 3 meals + 1 snack plan with grams/servings.
+   - Also show:
+     - Total nutrition (Calories, Protein, Carbs, Fat, Fiber, Iron)
+     - Total cost (₹)
+     - 2 alternative substitutions per item ranked by cost-effectiveness.
+
+3. Results Page (results.html):
+   - Show meal plan in beautiful cards (Breakfast 🍳, Lunch 🍛, Snack 🍌, Dinner 🍲).
+   - Each card lists foods with quantity in grams and cost.
+   - Add a summary table of nutrition + cost.
+   - Add a Download button to export results as CSV or PDF.
+
+4. UI/UX (HTML + CSS + JS):
+   - Mobile-first responsive design.
+   - Use warm, earthy tones (orange, green, cream) for an Indian food vibe.
+   - Sidebar form with input fields.
+   - Center results with modern cards + icons.
+   - Include emojis for food categories 🍚🥗🥜🍎.
+   - Smooth animations on hover (CSS transitions).
+   - Add a footer disclaimer: “This is not medical advice. For health concerns, consult a doctor.”
+
+5. File Structure:
+   /app.py                → Flask backend
+   /templates/index.html   → Input form
+   /templates/results.html → Meal plan results
+   /static/style.css       → Custom CSS styling
+   /static/script.js       → JS for interactions
+   /foods.csv              → Indian foods dataset
+
+6. Responsible AI:
+   - App must handle invalid inputs gracefully (e.g., budget too low → “No feasible plan, try increasing budget”).
+   - Privacy: No user data stored, just processed in memory.
+
+## Dataset (foods.csv sample entries):
+Food,Kcal,Protein,Fat,Carbs,Fiber,Iron,Cost
+Rice,130,2.7,0.3,28,0.4,0.2,5
+Roti,120,3,1,22,2,1,4
+Dal,116,9,0.6,20,5,3,8
+Rajma,140,9,1,25,6,3,10
+Chole,164,9,2,27,7,2,10
+Soya Chunks,345,52,0.5,33,13,10,15
+Paneer,296,21,22,6,0,0.6,40
+Milk,60,3.2,3,5,0,0.2,6
+Egg,155,13,11,1,0,1.2,7
+Chicken,239,27,14,0,0,1.3,25
+Banana,89,1.1,0.3,23,2.6,0.3,5
+Spinach,23,2.9,0.4,3.6,2.2,2.7,6
+Peanut,567,25,49,16,8,4.6,20
+Curd,98,11,4,3.4,0,0.2,12
+Poha,110,2,0.5,25,2,1,7
+
+(Add ~30 more common Indian foods.)
+
+## Deliverables:
+- Full Flask app with HTML/CSS/JS templates.
+- Aesthetic UI with cards and modern fonts.
+- Indian food dataset (CSV).
+- PDF/CSV export of results.
