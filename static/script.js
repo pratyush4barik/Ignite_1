@@ -47,7 +47,7 @@ function initializeFormValidation() {
 }
 
 function validateInput(event) {
-    const input = event.target;
+    const input = event.target || event;
     const value = input.value.trim();
     
     // Clear previous validation
@@ -56,19 +56,15 @@ function validateInput(event) {
     // Validate based on input type
     switch(input.id) {
         case 'age':
-            validateAge(input, value);
-            break;
+            return validateAge(input, value);
         case 'weight':
-            validateWeight(input, value);
-            break;
+            return validateWeight(input, value);
         case 'height':
-            validateHeight(input, value);
-            break;
+            return validateHeight(input, value);
         case 'budget':
-            validateBudget(input, value);
-            break;
+            return validateBudget(input, value);
         default:
-            validateRequired(input, value);
+            return validateRequired(input, value);
     }
 }
 
@@ -154,13 +150,25 @@ function handleFormSubmission(event) {
     const form = event.target;
     const submitButton = form.querySelector('button[type="submit"]');
     
-    // Validate all fields
+    // Validate all required fields
     let isValid = true;
     const inputs = form.querySelectorAll('input[required], select[required]');
     
     inputs.forEach(input => {
-        if (!validateInput({ target: input })) {
+        const value = input.value.trim();
+        
+        // Check if required field is empty
+        if (!value) {
+            showValidationError(input, 'This field is required.');
             isValid = false;
+            return;
+        }
+        
+        // Run specific validation for certain fields
+        if (input.id === 'age' || input.id === 'weight' || input.id === 'height' || input.id === 'budget') {
+            if (!validateInput(input)) {
+                isValid = false;
+            }
         }
     });
     
